@@ -1,0 +1,24 @@
+para crear un modelo
+php artisan make:model Bocadito
+
+para crear un modelo con su migration (o sea para crear su tabla en BD)
+php artisan make:model Bocadito -m
+
+para crear un modelo con su controlador
+php artisan make:model Producto -c
+
+agregar esto en todos los modelos. Ejemplo con modelo Producto:
+protected $table = 'productos_principales';
+protected $primaryKey = 'producto_id';
+protected $fillable = ['id', 'nombre', 'precio_normal', 'precio_especial', 'cant_minima', 'cant_actual', 'receta', 'id_tipo_prod'];
+
+EJEMPLO PARA EL SoftDeletes
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Flight extends Model
+{
+    use SoftDeletes; //si o si este
+}
+
+Adicionalmente, la nueva versión del Laravel (2020) ya NO agrega al método down de la migración:  $table->dropColumn('deleted_at');
+Ahora agrega:  $table->dropSoftDeletes();

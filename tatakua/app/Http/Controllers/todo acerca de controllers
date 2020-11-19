@@ -1,0 +1,4 @@
+para crear un controlador con sus resources API
+php artisan make:controller BebidaController --resource
+
+php artisan make:controller TortaController --resource --model=Torta

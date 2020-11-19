@@ -1,0 +1,9 @@
+Para los que le salga el error "Permisos incorrectos en el archivo de configuración ¡Cualquiera no debería poder modific…", cuando intenten levantar phpadmin.test en un navegador, lo pude solucionar de la siguiente manera:
+1) Ir al directorio donde "deszipiaron" phpadmin y copien el archivo config.sample.inc.php como config.inc.php
+2) agregar al inicio del archivo copiado la siguiente línea:
+$cfg['CheckConfigurationPermissions'] = false;
+
+en .env
+DB_DATABASE=base de datos
+DB_USERNAME=homestead
+DB_PASSWORD=secret

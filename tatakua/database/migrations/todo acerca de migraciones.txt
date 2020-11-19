@@ -1,0 +1,72 @@
+php artisan make:migration create_bebidas_table --create="bebidas"
+
+se crea un archivo en esta carpeta de migrations en el cual se debe agregar los campos con su tipo de dato
+para ver todos los tipos de datos buscar en https://laravel.com/docs/8.x/migrations#available-column-types
+
+para agregar una columna a una tabla
+php artisan make:migration add_capacidad_to_bebidas_table --table=bebidas
+
+php artisan migrate:rollback regresa el ultimo migrate que hice
+
+php artisan migrate:reset = elimina todos los migration realizados hasta el momento
+
+php artisan migrate:refresh = reset y despues migrate en un solo codigo
+
+php artisan migrate:status = es para ver todos los migrations hechos hasta el momento y su status
+
+
+class CreateFlightsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('flights', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('airline');
+
+            $table->foreignId('user_id');
+            //para las claves foraneas
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps(); created_at deleted_at para softdeletes
+        });
+        https://laravel.com/docs/8.x/migrations#available-column-types
+    }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('flights');
+    }
+}
+
+para editar columns, ejecutar composer require doctrine/dbal
+you may wish to increase the size of a string column.
+To see the change method in action, let's increase the size of the name column
+from 25 to 50:
+
+Schema::table('users', function (Blueprint $table) {
+    $table->string('name', 50)->change();
+});
+We could also modify a column to be nullable:
+
+Schema::table('users', function (Blueprint $table) {
+    $table->string('name', 50)->nullable()->change();
+});
+
+renombrar columna
+Schema::table('users', function (Blueprint $table) {
+    $table->renameColumn('from', 'to');
+});
+
+Schema::table('users', function (Blueprint $table) {
+    $table->dropColumn('votes');
+});
