@@ -63,6 +63,8 @@ return [
 
     'home' => RouteServiceProvider::HOME,
 
+    'logout' => RouteServiceProvider::LOGOUT_REDIRECT,
+
     /*
     |--------------------------------------------------------------------------
     | Fortify Routes Middleware

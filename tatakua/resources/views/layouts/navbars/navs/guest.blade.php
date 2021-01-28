@@ -13,9 +13,9 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="{{ route('home') }}" class="nav-link">
+          <!--<a href="{{ route('home') }}" class="nav-link">
             <i class="material-icons">dashboard</i> {{ __('Inicio') }}
-          </a>
+          </a>-->
         </li>
         <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
           <a href="{{ route('register') }}" class="nav-link">
@@ -24,14 +24,14 @@
         </li>
         <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}">
           <a href="{{ route('login') }}" class="nav-link">
-            <i class="material-icons">fingerprint</i> {{ __('Login') }}
+            <i class="material-icons">fingerprint</i> {{ __('Ingresar') }}
           </a>
         </li>
-        <li class="nav-item ">
+        <!--<li class="nav-item ">
           <a href="#" class="nav-link">
-            <i class="material-icons">face</i> {{ __('Perfil') }}
+            <i class="material-icons">face</i> Perfil
           </a>
-        </li>
+        </li>-->
       </ul>
     </div>
   </div>

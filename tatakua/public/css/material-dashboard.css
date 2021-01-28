@@ -4607,6 +4607,7 @@ tbody.collapse.show {
 
 .card-title {
   margin-bottom: 0.75rem;
+  font-size: 20px;
 }
 
 .card-subtitle {
@@ -5510,8 +5511,13 @@ button.close {
 
 .modal-open .modal {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
+
+.modal-open-2 .modal { /*este es el original*/
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 
 .modal-dialog {
   position: relative;
@@ -5535,11 +5541,32 @@ button.close {
   min-height: calc(100% - (0.5rem * 2));
 }
 
+.modal-dialog-2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-height: calc(100% - (0.5rem * 2));
+    margin: 0.5rem;
+    pointer-events: none;
+}
+
+.modal.fade .modal-dialog-2 {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -25%);
+  }
+
+  .modal.show .modal-dialog-2 {
+    transform: translate(0, 0);
+  }
+
 .modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: auto;
+  height: auto;
   pointer-events: auto;
   background-color: #ffffff;
   background-clip: padding-box;
@@ -5622,6 +5649,12 @@ button.close {
     max-width: 500px;
     margin: 1.75rem auto;
   }
+
+  .modal-dialog-2 {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+
   .modal-dialog-centered {
     min-height: calc(100% - (1.75rem * 2));
   }
@@ -8788,8 +8821,8 @@ a.text-dark:focus {
 
 .btn.btn-primary {
   color: #fff;
-  background-color: #9c27b0;
-  border-color: #9c27b0;
+  background-color: #fc8621;
+  border-color: #fc8621;
   box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
 
@@ -8865,7 +8898,7 @@ a.text-dark:focus {
 
 .btn.btn-primary.btn-link {
   background-color: transparent;
-  color: #9c27b0;
+  color: #fc8621;
   box-shadow: none;
 }
 
@@ -11185,7 +11218,7 @@ form {
   padding-left: 0;
   padding-right: 0;
   border-radius: 0;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .form-control:focus,
@@ -11198,19 +11231,19 @@ form {
 .form-control::-moz-placeholder {
   color: #AAAAAA;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .form-control:-ms-input-placeholder {
   color: #AAAAAA;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .form-control::-webkit-input-placeholder {
   color: #AAAAAA;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .has-white .form-control::-moz-placeholder {
@@ -11358,7 +11391,7 @@ fieldset[disabled] .is-focused .switch label:focus {
 
 .form-control,
 .is-focused .form-control {
-  background-image: linear-gradient(to top, #9c27b0 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+  background-image: linear-gradient(to top, #fc8621 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
 }
 
 .form-control:invalid {
@@ -14644,7 +14677,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   line-height: 30px;
   width: 30px;
   text-align: center;
-  color: #a9afbb;
 }
 
 .sidebar .nav li a,
@@ -16309,7 +16341,7 @@ legend {
 }
 
 a {
-  color: #9c27b0;
+  color: #c24914;
 }
 
 a:hover,
@@ -16777,7 +16809,7 @@ label {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  background: linear-gradient(60deg, #fc8621, #c24914);
 }
 
 .card .card-header-info .card-icon,
@@ -16828,7 +16860,7 @@ label {
 .card .card-header-primary .card-icon,
 .card .card-header-primary:not(.card-header-icon):not(.card-header-text),
 .card .card-header-primary .card-text {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(249, 224, 174, 0.3);
 }
 
 .card .card-header-danger .card-icon,
@@ -18830,7 +18862,7 @@ Copyright (c) 2015 Daniel Eden
 
 .page-header .footer {
   flex-grow: 0;
-  position: static
+  position: static;
 }
 
 .page-header.login-page {
@@ -18846,6 +18878,21 @@ Copyright (c) 2015 Daniel Eden
   padding-bottom: 0px !important;
 }
 
+.icon-sidebar {
+    height: 30px;
+    width: 30px;
+    fill: currentColor !important;
+    color: #a9afbb;
+}
+
+.icon-empanadas {
+
+    height: 30px;
+    width: 30px;
+    fill: currentColor !important;
+    color: #a9afbb;
+}
+
 @media screen and (max-width: 991px) {
   .navbar .navbar-collapse .navbar-nav {
     display: -ms-flexbox;
@@ -18856,6 +18903,5 @@ Copyright (c) 2015 Daniel Eden
     margin-bottom: 0;
     list-style: none;
 }
-
 
 /*# sourceMappingURL=dashboard-free.css.map */

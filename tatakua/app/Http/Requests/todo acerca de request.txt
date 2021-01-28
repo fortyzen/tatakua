@@ -1,0 +1,3 @@
+se usa para validaciones para la entrada de datos. Es para mayor seguridad
+php artisan make:request UserCreateRequest
+en caso de equivocarme eliminar el archivo y utilizar el comando composer dump-autoload
